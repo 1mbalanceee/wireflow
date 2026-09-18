@@ -1,5 +1,5 @@
 const fs=require('fs'),vm=require('vm'),assert=require('assert');
-const html=fs.readFileSync('outputs/wireflow.html','utf8'),code=html.match(/<script>([\s\S]*)<\/script>/)[1];
+const html=fs.readFileSync(fs.existsSync('outputs/wireflow-v02.html')?'outputs/wireflow-v02.html':'work/wireflow-v02.html','utf8'),code=html.match(/<script>([\s\S]*)<\/script>/)[1];
 const els={},storage={};const el=id=>els[id]??={value:'',innerHTML:'',textContent:'',classList:{toggle(){}},prepend(node){this.innerHTML=node.innerHTML+this.innerHTML}};
 const ctx=vm.createContext({document:{getElementById:el,addEventListener(){},createElement(){return {className:'',innerHTML:''}}},localStorage:{getItem:k=>storage[k],setItem:(k,v)=>storage[k]=v},console});
 vm.runInContext(code,ctx);const run=c=>vm.runInContext(c,ctx);let n=0;const check=(c,expected)=>{assert.deepStrictEqual(run(c),expected,c);n++};const fill=(id,v)=>el(id).value=String(v);

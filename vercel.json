@@ -3,6 +3,12 @@
   "cleanUrls": true,
   "rewrites": [
     { "source": "/", "destination": "/index.html" },
-    { "source": "/wireflow", "destination": "/outputs/wireflow.html" }
+    { "source": "/wireflow", "destination": "/outputs/wireflow.html" },
+    { "source": "/v02", "destination": "/outputs/wireflow-v02.html" },
+    { "source": "/v2", "destination": "/outputs/wireflow-v02.html" },
+    { "source": "/wireflow-v02", "destination": "/outputs/wireflow-v02.html" },
+    { "source": "/v03", "destination": "/outputs/wireflow-v03.html" },
+    { "source": "/v3", "destination": "/outputs/wireflow-v03.html" },
+    { "source": "/wireflow-v03", "destination": "/outputs/wireflow-v03.html" }
   ]
 }
